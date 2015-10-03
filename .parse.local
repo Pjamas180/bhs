@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "_default": {
+      "link": "bhs"
+    },
+    "bhs": {
+      "applicationId": "AHcAYFoErNb4WjtezHKnL0WtPT83nv3iNtPMKSc5"
+    }
+  }
+}
