@@ -7,15 +7,14 @@
 app.set('views', 'cloud/views');  // Specify the folder to find templates
 app.set('view engine', 'ejs');    // Set the template engine
 app.use(express.bodyParser());    // Middleware for reading request body
-app.use(express.static(__dirname + '/public'));
 
 // This is an example of hooking up a request handler with a specific request
 // path and HTTP verb using the Express routing API.
-app.get('/hello', function(req, res) {
+app.get('/', function(req, res) {
   res.render('hello', { message: 'Congratsss, you just set up your app!' });
 });
 
-app.post('/hello', function(req, res) {
+app.post('/', function(req, res) {
 	res.render('hello', { message: req.body.message } );
 });
 
