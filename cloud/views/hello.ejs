@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="//www.parsecdn.com/js/parse-1.6.4.min.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,28 +20,34 @@
     <link href="/css/jumbotron-narrow.css" rel="stylesheet">
 
     <script type="text/javascript">
+      Parse.initialize('AHcAYFoErNb4WjtezHKnL0WtPT83nv3iNtPMKSc5', 'PWzbh0RWIL0DiuADE6AXO3OWbi4gz6cX1NqyZTCB');
+      
+      function saveText() {
+        var inputText = document.getElementById('userpost').value;
+        //alert(inputText);
 
-      function saveFunction() {
+        var UserText = Parse.Object.extend("UserText");
+        var userText = new UserText();
 
-        var GameScore = Parse.Object.extend("GameScore");
-        alert("1");
-        var gameScore = new GameScore();
+        userText.set("text", inputText);
+        //userText.set("text", inputText);
 
-        gameScore.set("score", 1337);
-        gameScore.set("playerName", "Joe");
-        gameScore.set("cheatMode" false);
-
-        gameScore.save(null, {
-            success: function(gameScore) {
+        userText.save(null, {
+            success: function(userText) {
             // Execute any logic that should take place after the object is saved.
-            alert('New object created with objectId: ' + gameScore.id);
+            //alert('New object created with objectId: ' + userText.id);
             },
-            error: function(gameScore, error) {
+            error: function(userText, error) {
             // Execute any logic that should take place if the save fails.
             // error is a Parse.Error with an error code and message.
             alert('Failed to create new object, with error code: ' + error.message);
             }
         });
+
+
+        alert(userText.get("text")); 
+
+        
       }
 
     </script> 
@@ -70,10 +77,9 @@
       <div class="row posts">
         <div class="col-lg-8">
 
-          <button onclick="saveFunction()">Click</button>
           <form method="post">
-            <input type="text" name="name">
-            <input type="submit">
+            <input type="text" name="name" id="userpost">
+            <input type="submit" onclick="saveText()">
           </form>
         </div>
 

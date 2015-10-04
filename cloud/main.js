@@ -4,5 +4,3 @@ require('cloud/app.js');
 Parse.Cloud.define("hello", function(request, response) {
   response.success("Hello world!");
 });
-
-Parse.initialize('AHcAYFoErNb4WjtezHKnL0WtPT83nv3iNtPMKSc5', 'PWzbh0RWIL0DiuADE6AXO3OWbi4gz6cX1NqyZTCB');
