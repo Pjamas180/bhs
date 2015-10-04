@@ -1,3 +1,4 @@
+Parse.initialize('AHcAYFoErNb4WjtezHKnL0WtPT83nv3iNtPMKSc5', 'PWzbh0RWIL0DiuADE6AXO3OWbi4gz6cX1NqyZTCB');
 
 // These two lines are required to initialize Express in Cloud Code.
  express = require('express');
@@ -17,6 +18,8 @@ app.get('/', function(req, res) {
 app.post('/', function(req, res) {
 	res.render('hello', { message: req.body.message } );
 });
+
+
 
 // // Example reading from the request query string of an HTTP get request.
 // app.get('/test', function(req, res) {

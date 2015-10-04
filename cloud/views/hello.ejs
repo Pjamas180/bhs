@@ -18,6 +18,33 @@
     <!-- Custom styles for this template -->
     <link href="/css/jumbotron-narrow.css" rel="stylesheet">
 
+    <script type="text/javascript">
+
+      function saveFunction() {
+
+        var GameScore = Parse.Object.extend("GameScore");
+        alert("1");
+        var gameScore = new GameScore();
+
+        gameScore.set("score", 1337);
+        gameScore.set("playerName", "Joe");
+        gameScore.set("cheatMode" false);
+
+        gameScore.save(null, {
+            success: function(gameScore) {
+            // Execute any logic that should take place after the object is saved.
+            alert('New object created with objectId: ' + gameScore.id);
+            },
+            error: function(gameScore, error) {
+            // Execute any logic that should take place if the save fails.
+            // error is a Parse.Error with an error code and message.
+            alert('Failed to create new object, with error code: ' + error.message);
+            }
+        });
+      }
+
+    </script> 
+
   </head>
 
   <body>
@@ -37,22 +64,20 @@
 
       <div class="jumbotron">
         <h1>BAE HOUSE</h1>
-        <p class="lead">Welcome to the BAE House website! Our motto is work hard fuck hard so come by and we'll do some fucking!!!!</p>
+        <p class="lead">Welcome to the BAE House website! </p>
       </div>
 
-      <div class="row marketing">
-        <div class="col-lg-12 .col-md-8">
-          <h4>Subheading</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+      <div class="row posts">
+        <div class="col-lg-8">
 
-          <h4>Subheading</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-          <h4>Subheading</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+          <button onclick="saveFunction()">Click</button>
+          <form method="post">
+            <input type="text" name="name">
+            <input type="submit">
+          </form>
         </div>
 
-        <div class="col-lg-6 .col-md-4">
+        <div class="col-lg-4">
           <h4>Subheading</h4>
           <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
 

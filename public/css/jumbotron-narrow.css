@@ -7,7 +7,7 @@ body {
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
-.marketing,
+.posts,
 .footer {
   padding-right: 15px;
   padding-left: 15px;
@@ -39,18 +39,18 @@ body {
   margin: 30px 0;
 }
 
-/* Main marketing message and sign up button */
+/* Main post message */
 .jumbotron {
   text-align: center;
   border-radius: 25px;
   background-color: #e5e5e5;
 }
 
-/* Supporting marketing content */
-.marketing {
+/* Supporting post content */
+.posts {
   margin: 40px 0;
 }
-.marketing p + h4 {
+.posts p + h4 {
   margin-top: 28px;
 }
 
@@ -58,7 +58,7 @@ body {
 @media screen and (min-width: 768px) {
   /* Remove the padding we set earlier */
   .header,
-  .marketing,
+  .posts,
   .footer {
     padding-right: 0;
     padding-left: 0;
