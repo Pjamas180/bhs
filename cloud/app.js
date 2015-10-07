@@ -1,5 +1,3 @@
-Parse.initialize('AHcAYFoErNb4WjtezHKnL0WtPT83nv3iNtPMKSc5', 'PWzbh0RWIL0DiuADE6AXO3OWbi4gz6cX1NqyZTCB');
-
 // These two lines are required to initialize Express in Cloud Code.
  express = require('express');
  app = express();
